@@ -1,0 +1,38 @@
+Spring Boot＋JPAでデータベースに接続する方法
+のフォルダ構成
+
+springSample
+  |
+  |___src.main.java
+       |
+       |___com.example.demo
+       |    |
+       |    |___controller
+       |    |    |
+       |    |    |__UserController.java
+       |    |
+       |    |___entity
+       |    |    |
+       |    |    |___User.java
+       |    |
+       |    |___repository
+       |    |    |
+       |    |    |___UserRepository.java
+       |    |
+       |    |___service
+       |         |
+       |         |___UserService.java
+       |
+       |___src.main.resources
+            |
+            |___templates
+            |    |
+            |    |___user
+            |         |
+            |         |___list.html
+            |
+            |___static
+                 |
+                 |___css
+                      |
+                      |___list.css
