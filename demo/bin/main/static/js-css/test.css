@@ -1,0 +1,10 @@
+body {
+    font-family:  "Meiryo", 'メイリオ', sans-serif;
+    font-size: 1em;
+}
+
+
+header{
+       position: fixed;/*固定する*/
+       top: 10;/*ブラウザの上からの距離はゼロ*/
+}

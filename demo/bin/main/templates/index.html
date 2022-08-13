@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>InitDisp</title>
+
+<script th:src="@{/js-css/jquery-3.1.1.min.js}"></script>
+<script th:src="@{/js-css/semantic.min.js}"></script>
+<script th:src="@{/js-css/test.js}"></script>
+
+<link th:href="@{/js-css/semantic.css}" rel="stylesheet">
+<link th:href="@{/js-css/test.css}" rel="stylesheet">
+<link th:href="@{/js-css/admin.css}" rel="stylesheet">
+
+<!--
+<img th:src=”@{/images/ファイル名.jpg}” >
+-->
+
+</head>
+<body>
+	<div class="ui container">
+
+		<header>
+			<p>ヘッダーの記述 b</p>
+		</header>
+
+		<br>
+		<br>
+
+		<table class="ui selectable  table">
+			<thead>
+				<tr>
+					<th><span th:text="#{message.dept.id}"></span></th>
+					<th><span th:text="#{message.dept.name}"></span></th>
+				</tr>
+			</thead>
+			<tbody>
+<!--
+https://qiita.com/NagaokaKenichi/items/c6d1b76090ef5ef39482
+
+●OK
+				<tr th:each="dept:${deptList}" th:object="${dept}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+				</tr>
+
+●NG
+				<tr th:each="${deptList}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+				</tr>
+
+
+●OK：eachで「object」に入れている
+				<tr th:each="dept : ${deptList}">
+					<td th:text="${dept.id}"></td>
+					<td th:text="${dept.name}"></td>
+				</tr>
+
+●NG：「object」に入れていない
+				<tr th:each="${deptList}">
+					<td th:text="${deptList.id}"></td>
+					<td th:text="${deptList.name}"></td>
+				</tr>
+
+●OK：objectで配列の場合は一個づつ指定
+				<tr th:object="${deptList[0]}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+				</tr>
+
+●NG：（配列なのに）配列の指定をしていないため
+				<tr th:object="${deptList}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{name}"></td>
+				</tr>
+ -->
+
+
+
+
+			</tbody>
+		</table>
+
+		<br>	<br>
+
+		<div class="ui two column grid">
+			<div class="column">
+				<div class="ui text container">
+					<p id='strTop' class='ui right aligned'>文字色変更■</p>
+				</div>
+			</div>
+			<div class="column">
+				<button id='btnBlue' class="ui primary button">Button 青</button>
+				<button id='btnBlack' class="ui secondary button">Button 黒</button>
+				<button id='btnGreen' class="ui positive button">Button 緑</button>
+				<button id='btnRed' class="ui red button">Button 赤</button>
+			</div>
+		</div>
+
+		<br>
+		<br>
+
+		<div class="ui container">
+			<table class="ui selectable  table">
+				<thead>
+					<tr>
+						<th><span th:text="#{message.vegetable.id}"></span></th>
+						<th><span th:text="#{message.vegetable.col1}"></span></th>
+						<th><span th:text="#{message.vegetable.col2}"></span></th>
+						<th><span th:text="#{message.vegetable.city_id}"></span></th>
+					</tr>
+				</thead>
+				<tr th:each="vege:${vegetableList}" th:object="${vege}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{col1}"></td>
+					<td th:text="*{col2}"></td>
+					<td th:text="*{cityId}"></td>
+				</tr>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+</body>
+</html>

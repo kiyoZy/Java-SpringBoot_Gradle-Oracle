@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>insert and delete</title>
+
+<script th:src="@{/js-css/jquery-3.1.1.min.js}"></script>
+<script th:src="@{/js-css/semantic.min.js}"></script>
+<script th:src="@{/js-css/test.js}"></script>
+
+<link th:href="@{/js-css/semantic.css}" rel="stylesheet">
+<link th:href="@{/js-css/test.css}" rel="stylesheet">
+<link th:href="@{/js-css/admin.css}" rel="stylesheet">
+
+<!--
+<img th:src=”@{/images/ファイル名.jpg}” >
+-->
+
+</head>
+<body>
+	<div class="ui container">
+
+		<header>
+			<p>ヘッダーの記述</p>
+		</header>
+
+		<br>
+		<br>
+
+		<div class="ui container">
+			<table class="ui selectable  table">
+				<thead>
+					<tr>
+						<th><span th:text="#{message.vegetable.id}"></span></th>
+						<th><span th:text="#{message.vegetable.col1}"></span></th>
+						<th><span th:text="#{message.vegetable.col2}"></span></th>
+						<th><span th:text="#{message.vegetable.city_id}"></span></th>
+						<th><input type='checkbox' id='chkAll'></th>
+					</tr>
+				</thead>
+				<tr th:each="vege:${vegetableList}" th:object="${vege}">
+					<td th:text="*{id}"></td>
+					<td th:text="*{col1}"></td>
+					<td th:text="*{col2}"></td>
+					<td th:text="*{cityId}"></td>
+					<th><input type='checkbox' id='chk'></th>
+				</tr>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+
+</body>
+</html>
